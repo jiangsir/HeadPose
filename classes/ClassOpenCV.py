@@ -84,7 +84,7 @@ def show_arrow(cv2, shape, img):
     p1 = (int(image_points[0][0]), int(image_points[0][1]))
     p2 = (int(nose_end_point2D[0][0][0]), int(nose_end_point2D[0][0][1]))
 
-    cv2.arrowedLine(img, p1, p2, (255, 255, 0), 2) # 面部方向箭頭
+    cv2.arrowedLine(img, p1, p2, (255, 0, 0), 3) # 面部方向箭頭
 
 def show_68points(cv2, shape, img):
     '''
@@ -93,7 +93,7 @@ def show_68points(cv2, shape, img):
     # loop over the (x, y)-coordinates for the facial landmarks
     # and draw them on the image
     for (x, y) in shape:
-        cv2.circle(img, (x, y), 2, (0, 0, 255), -1)
+        cv2.circle(img, (x, y), 3, (0, 0, 255), -1)
 
 def show_opencv(hint='', mirror=True):
     ''' 顯示主畫面 '''
@@ -134,7 +134,7 @@ def show_opencv(hint='', mirror=True):
             cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
             # show the face number
             cv2.putText(img, "Face #{}".format(i + 1), (x - 10, y - 10),
-                cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
+                cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
             show_68points(cv2, shape, img)
             show_arrow(cv2, shape, img)
