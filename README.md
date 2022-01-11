@@ -14,6 +14,7 @@
 
 ## 安裝 opencv
     pip install opencv-python  
+    pip install Pillow
     pip install --upgrade imutils  
 
 ## 安裝 dlib

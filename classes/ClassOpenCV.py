@@ -104,7 +104,7 @@ def show_opencv(hint='', mirror=True):
     
     print('cam opened')
     cam.set(3, 1280)  # 修改解析度 寬
-    cam.set(4, 1280 // 16 * 10)  # 修改解析度 高
+    cam.set(4, 720)  # 修改解析度 高
     print('WIDTH', cam.get(3), 'HEIGHT', cam.get(4))  # 顯示預設的解析度
     # Dlib 的人臉偵測器
     detector = dlib.get_frontal_face_detector()
