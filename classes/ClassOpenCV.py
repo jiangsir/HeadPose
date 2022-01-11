@@ -160,7 +160,7 @@ def show_opencv(hint='', mirror=True):
         ##font = ImageFont.truetype(ttf, 40, encoding="utf-8")
         hintfont = ImageFont.truetype(ttf, 24, encoding="utf-8")
 
-        hints = "請按「ENTER」繼續" + hint
+        hints = "請按「ESC」結束" + hint
         w, h = draw.textsize(hints, font=hintfont)
         draw.rectangle(
             ((W / 2 - w / 2 - 5, H - h), (W / 2 + w / 2 + 5, H)), fill="red")
