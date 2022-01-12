@@ -5,8 +5,24 @@ import cv2, dlib
 import numpy as np
 from imutils import face_utils
 import imutils
+import mediapipe as mp
+
 
 ttf = "C:/Windows.old/Windows/Fonts/msjhbd.ttc"  # 字體: 微軟正黑體
+
+mpHands = mp.solutions.mediapipe.python.solutions.hands
+hands = mpHands.Hands()
+# mpDraw = mp.solutions.drawing_utils
+mpDraw = mp.solutions.mediapipe.python.solutions.drawing_utils
+
+def show_handlandmarks(cv2, img):
+    imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    result = hands.process(imgRGB)
+    print(result.multi_hand_landmarks)
+    if result.multi_hand_landmarks:
+        for handlandmark in result.multi_hand_landmarks:
+            mpDraw.draw_landmarks(img, handlandmark, mpHands.HAND_CONNECTIONS) # 把點連接起來
+
 
 def show_arrow(cv2, shape, img):
     '''
@@ -138,6 +154,7 @@ def show_opencv(hint='', mirror=True):
 
             show_68points(cv2, shape, img)
             show_arrow(cv2, shape, img)
+            show_handlandmarks(cv2, img)
 
         cv2.imshow("Output", img)
 ###############################################
