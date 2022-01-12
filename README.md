@@ -29,6 +29,7 @@
 
 <img src="images/Face1.png" width="200">
 
+手部 21 點偵測
 <img src="images/Hand1.png" width="200">
 
 # 參考資料

@@ -10,9 +10,10 @@ import mediapipe as mp
 
 ttf = "C:/Windows.old/Windows/Fonts/msjhbd.ttc"  # 字體: 微軟正黑體
 
-mpHands = mp.solutions.hands
+mpHands = mp.solutions.mediapipe.python.solutions.hands
 hands = mpHands.Hands()
-mpDraw = mp.solutions.drawing_utils
+# mpDraw = mp.solutions.drawing_utils
+mpDraw = mp.solutions.mediapipe.python.solutions.drawing_utils
 
 def show_handlandmarks(cv2, img):
     imgRGB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
