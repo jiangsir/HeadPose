@@ -192,7 +192,7 @@ def show_opencv(hint='', mirror=True):
             pass
         elif key == 27:  # esc to quit
             cv2.destroyAllWindows()
-            cv2.VideoCapture(0).release()
+            cam.release()
             raise print("偵測到 esc 結束鏡頭")
         else:
             if key != -1:
