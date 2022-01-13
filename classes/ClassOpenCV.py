@@ -154,8 +154,8 @@ def show_opencv(hint='', mirror=True):
 
             show_68points(cv2, shape, img)
             show_arrow(cv2, shape, img)
-            show_handlandmarks(cv2, img)
-
+        
+        show_handlandmarks(cv2, img)
         cv2.imshow("Output", img)
 ###############################################
         # # 取出所有偵測的結果
