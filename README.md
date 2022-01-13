@@ -13,7 +13,7 @@
     conda remove -n headpose
 
 ## 安裝 相關套件
-    pip install opencv-python Pillow mediapipe imutils  
+    pip install opencv-python Pillow mediapipe imutils
 
 ## 安裝 dlib
     pip install dlib
