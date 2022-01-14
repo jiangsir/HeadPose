@@ -6,6 +6,7 @@ import numpy as np
 from imutils import face_utils
 import imutils
 import mediapipe as mp
+import classes.ClassUtils
 
 
 ttf = "C:/Windows.old/Windows/Fonts/msjhbd.ttc"  # 字體: 微軟正黑體
@@ -171,7 +172,7 @@ def show_opencv(hint="", mirror=True, allowESC=True):
     # Dlib 的人臉偵測器
     detector = dlib.get_frontal_face_detector()
     predictor = dlib.shape_predictor("shape_predictor_68_face_landmarks.dat")
-
+    hintset = set()
     while True:
         ret_val, img = cam.read()
         if mirror:
@@ -229,13 +230,16 @@ def show_opencv(hint="", mirror=True, allowESC=True):
 
         ##font = ImageFont.truetype(ttf, 40, encoding="utf-8")
         hintfont = ImageFont.truetype(ttf, 24, encoding="utf-8")
+        hintset.add("請按空白鍵拍照")
+        if hint != None and hint.strip() != "":
+            hintset.add(hint)
+        hintstring = " | ".join(hintset)
 
-        # hints = "請按「ESC」結束" + hint
-        w, h = draw.textsize(hint, font=hintfont)
+        w, h = draw.textsize(hintstring, font=hintfont)
         draw.rectangle(((W / 2 - w / 2 - 5, H - h), (W / 2 + w / 2 + 5, H)), fill="red")
         hintlocation = (W / 2 - w / 2, H - h)
         # textlocation = (0,0)
-        draw.text(hintlocation, hint, (0, 255, 255), font=hintfont)  #
+        draw.text(hintlocation, hintstring, (0, 255, 255), font=hintfont)  #
 
         cv2_text_im = cv2.cvtColor(np.array(pil_im), cv2.COLOR_RGB2BGR)
 
@@ -248,14 +252,11 @@ def show_opencv(hint="", mirror=True, allowESC=True):
 
         key = cv2.waitKey(1)
         if key == ord(" ") or key == 3 or key == 13:  # space or enter
-            # picturepath = getTakePicturePath(
-            #     config['personGroupId'])
+            picturepath = classes.ClassUtils.getTakePicturePath()
             # ret_val, img = cam.read()
-            # cv2.imwrite(picturepath, img)
+            cv2.imwrite(picturepath, img)
             # cv2.destroyAllWindows()
-            # cv2.VideoCapture(0).release()
-            # return picturepath
-            pass
+            # cam.release()
         elif key == 27 and allowESC:  # esc to quit
             cv2.destroyAllWindows()
             cam.release()
