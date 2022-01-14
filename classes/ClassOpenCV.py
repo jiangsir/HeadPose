@@ -252,7 +252,7 @@ def show_opencv(hint="", mirror=True, allowESC=True):
 
         key = cv2.waitKey(1)
         if key == ord(" ") or key == 3 or key == 13:  # space or enter
-            picturepath = classes.ClassUtils.getTakePicturePath()
+            picturepath = classes.ClassUtils.getMakePicturePath()
             # ret_val, img = cam.read()
             cv2.imwrite(picturepath, img)
             # cv2.destroyAllWindows()

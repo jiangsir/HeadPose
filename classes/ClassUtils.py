@@ -6,7 +6,7 @@ def getBasepath():
     return basepath
 
 
-def getTakePicturePath():
+def getMakePicturePath():
     """ 取得拍照後要存檔的路徑。 """
     basepath = getBasepath()
     jpgimagepath = os.path.join(
