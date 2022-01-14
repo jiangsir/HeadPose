@@ -1,3 +1,3 @@
 call activate headpose
-python HeadPose.py
+python HeadPose.py always
 call conda deactivate
