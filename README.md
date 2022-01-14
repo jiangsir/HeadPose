@@ -1,6 +1,6 @@
 # HeadPose
 
-## 安裝 anaconda3 並修改環境變數
+## 安裝 miniconda 並修改環境變數
     C:\Users\xxxx\anaconda3  
     C:\Users\xxxx\anaconda3\Scripts  
     C:\Users\xxxx\anaconda3\Library\bin  
