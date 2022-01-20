@@ -49,3 +49,17 @@ https://github.com/lincolnhard/head-pose-estimation
 ## <a href="https://www.youtube.com/watch?v=x4eeX7WJIuA">OpenCV + MediaPipe 手部追蹤</a>
 
 ## <a href="https://www.bilibili.com/video/BV1XA41157pK/">手指計數</a>
+
+
+# 測試 iris eye tracking 
+
+由於 mediapipe for python 暫不支援 iris face lankmark。 iris 更適合進行眼球追蹤。  
+有文章說明如何將 iris 功能加入 python 。
+參考文件:  
+<a href="https://github.com/google/mediapipe/issues/1530"> Set up iris landmark in python solution #1530 </a>
+
+眼球左右判斷  
+<a href="https://www.youtube.com/watch?v=Y-mCtkv41rk">Eyes Tracking with Mediapipe | opencv tutorial | python</a>
+
+[HeadPoseByMediapipe] 用 MediaPipe 偵測 head pose  
+<a href="https://www.youtube.com/watch?v=-toNMaS4SeQ">Head Pose Estimation with MediaPipe and OpenCV in Python - OVER 100 FPS!!!</a>
