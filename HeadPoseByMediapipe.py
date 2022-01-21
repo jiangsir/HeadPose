@@ -10,7 +10,6 @@ mp_drawing = mp.solutions.drawing_utils
 
 drawing_spec = mp_drawing.DrawingSpec(thickness=1, circle_radius=1)
 
-
 cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
 
 while cap.isOpened():

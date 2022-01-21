@@ -63,3 +63,6 @@ https://github.com/lincolnhard/head-pose-estimation
 
 [HeadPoseByMediapipe] 用 MediaPipe 偵測 head pose  
 <a href="https://www.youtube.com/watch?v=-toNMaS4SeQ">Head Pose Estimation with MediaPipe and OpenCV in Python - OVER 100 FPS!!!</a>
+
+參考程式碼:
+<a href="https://github.com/niconielsen32/ComputerVision/blob/master/headPoseEstimation.py"> headPoseEstimation.py</a>
